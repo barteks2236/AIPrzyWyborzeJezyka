@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 	<title>JARVISchat</title>
@@ -8,6 +8,7 @@
 <body>
 <h1>J.A.R.V.I.S.</h1>
 
+    <p th:text="'Wyswietla: ' + ${klient.imie}" />
 <p>Java Artificial Rare Virtual Inteligent System</p>
 
 <div class="container">

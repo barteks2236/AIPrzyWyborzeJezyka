@@ -333,7 +333,19 @@ body {
   100% {
     box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
   }
+}  
+  @keyframes logo-entry {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
 /* Font / Universal Properties */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -341,8 +353,8 @@ body {
 }
 
 * {
-  user-select: none;
-  font: 20px 'Agency FB', sans-serif;
+	user-select: none;
+	font: 20px 'Agency FB', sans-serif;
 }
 
 html, body {
@@ -352,29 +364,33 @@ html, body {
 
 /* Left Menu */
 #leftmenu {
-  position: fixed;
-  float: left;
-  margin-left: 50px;
-  width: 210px;
+	animation: logo-entry 5s ease-in;
+	position: fixed;
+	float: left;
+	margin-left: 50px;
+	width: 210px;
 }
 
 #date_time {
-  margin-left: 30px;
-  width: 200px;
-  height: 200px;
+	animation: logo-entry 4s ease-in;
+	margin-left: 30px;
+	width: 200px;
+	height: 200px;
 }
 
 #time {
-  margin-left: 110px;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  line-height: 0;
+	animation: logo-entry 4s ease-in;
+	margin-left: 110px;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.8);
+	line-height: 0;
 }
 
 #date {
-  position: fixed;
-  margin-top: 20px;
-  background: rgba(0, 0, 0, 0.8);
+	animation: logo-entry 5s ease-in;
+	position: fixed;
+	margin-top: 20px;
+	background: rgba(0, 0, 0, 0.8);
 }
 
 .title {
@@ -438,35 +454,42 @@ html, body {
 
 /* Right Menu */
 #rightmenu {
-  float: right;
-  margin-right: 20px;
-  width: 300px;
+	animation: logo-entry 3s ease-in;
+	float: right;
+	margin-right: 20px;
+	width: 300px;
 }
 
 #note_input {
-  color: rgba(2, 255, 255, 0.6);
-  padding: 5px;
-  border-style: none;
-  background: transparent;
-  resize: none;
-  transition: 0.3s;
-  width: calc(100% - 15px);
+	animation: logo-entry 6s ease-in;
+	color: rgba(2, 255, 255, 0.6);
+	padding: 5px;
+	border-style: none;
+	background: transparent;
+	resize: none;
+	transition: 0.3s;
+	width: calc(100% - 15px);
 }
 
 #note_input:hover {
-  color: #02feff;
-  transition: 0.3s;
+	animation: logo-entry 3s ease-in;
+	color: #02feff;
+	transition: 0.3s;
 }
 
 /* Taskbar */
-#taskbar_wrapper
+#taskbar_wrapper {
+	animation: logo-entry 1s ease-in;
+}
+
 #taskbar {
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  background: gray;
-  margin-left: auto;
-  margin-right: auto;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	background: gray;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Arc Reactor */
@@ -477,10 +500,11 @@ ul {
 }
 
 #arc_container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+	animation: logo-entry 7s ease-in;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 /* JARVIS */
 .arc_reactor {
@@ -823,89 +847,101 @@ ul {
 }
 
 #particle1 {
-  position: fixed;
-  margin-left: 260px;
-  margin-top: 410px;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	margin-left: 260px;
+	margin-top: 410px;
 }
 
 #particle1_1 {
-  position: fixed;
-  margin-left: 255px;
-  margin-top: 480px;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	margin-left: 255px;
+	margin-top: 480px;
 }
 
 #particle1_2 {
-  position: fixed;
-  margin-left: 275px;
-  margin-top: 580px;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	margin-left: 275px;
+	margin-top: 580px;
 }
 
 #particle1_3 {
-  position: fixed;
-  color: rgba(2, 255, 255, 0.3);
-  font-size: 90px;
-  margin-left: 190px;
-  margin-top: 730px;
-  transform: rotate(90deg);
-  z-index: -1;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	color: rgba(2, 255, 255, 0.3);
+	font-size: 90px;
+	margin-left: 190px;
+	margin-top: 730px;
+	transform: rotate(90deg);
+	z-index: -1;
 }
 
 #particle2 {
-  position: fixed;
-  margin-left: 20px;
-  margin-top: 20px;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 #particle3 {
-  position: fixed;
-  height: 240px;
-  margin-left: 40px;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 240px;
+	margin-left: 40px;
 }
 
 #particle4 {
-  position: fixed;
-  height: 240px;
-  margin-top: 200px;
-  margin-left: -10px;
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 240px;
+	margin-top: 200px;
+	margin-left: -10px;
 }
 
 #particle5 {
-  position: fixed;
-  height: 290px;
-  margin-top: -90px;
-  margin-left: 230px;
-  border-color: rgba(2, 255, 255, 0.15);
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 290px;
+	margin-top: -90px;
+	margin-left: 230px;
+	border-color: rgba(2, 255, 255, 0.15);
 }
 
 #particle6 {
-  position: fixed;
-  height: 290px;
-  margin-top: 5px;
-  margin-left: 3px;
-  border-color: rgba(2, 255, 255, 0.2);
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 290px;
+	margin-top: 5px;
+	margin-left: 3px;
+	border-color: rgba(2, 255, 255, 0.2);
 }
 
 #particle7 {
-  position: fixed;
-  height: 290px;
-  margin-top: 5px;
-  margin-left: 3px;
-  border-color: rgba(2, 255, 255, 0.15);
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 290px;
+	margin-top: 5px;
+	margin-left: 3px;
+	border-color: rgba(2, 255, 255, 0.15);
 }
 
 #particle8 {
-  position: fixed;
-  height: 500px;
-  margin-left: -232px;
-  margin-top: 280px;
-  border-color: rgba(2, 255, 255, 0.15);
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 500px;
+	margin-left: -232px;
+	margin-top: 280px;
+	border-color: rgba(2, 255, 255, 0.15);
 }
 
 #particle9 {
-  position: fixed;
-  height: 320px;
-  margin-left: 3px;
-  border-color: rgba(2, 255, 255, 0.2);
+	animation: logo-entry 3s ease-in;
+	position: fixed;
+	height: 320px;
+	margin-left: 3px;
+	border-color: rgba(2, 255, 255, 0.2);
 }
 
 /* Right Menu Particles */
@@ -931,22 +967,23 @@ ul {
 }
 
 #JARVIS {
-  color: #008B8B;
-  margin-left: 620px;
-  margin-top: 470px;
-  width: 20px;
-  height: 20px;
-  font-size: 10%;
-  text-decoration: none;
-
+	animation: logo-entry 5s ease-in;
+	color: #008B8B;
+	margin-left: 620px;
+	margin-top: 470px;
+	width: 20px;
+	height: 20px;
+	font-size: 10%;
+	text-decoration: none;
 }
 
 #VERONICA {
-  color: #FF69B4;
-  margin-left: 1185px;
-  margin-top: -35px;
-  width: 40px;
-  height: 40px;
+	animation: logo-entry 5s ease-in;
+	color: #FF69B4;
+	margin-left: 1185px;
+	margin-top: -35px;
+	width: 40px;
+	height: 40px;
 }
 
 /* <style>

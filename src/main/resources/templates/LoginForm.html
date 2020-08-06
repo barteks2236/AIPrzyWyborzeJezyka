@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
 <meta charset="UTF-8">
@@ -22,18 +22,20 @@
 		</h1>
 	</div>
 	<section class="stark-login">
-
-		<form action="http://localhost:8080/JARVISchat" method="">
+<!-- http://localhost:8080/JARVISchat -->
+		<form action="#" th:action="@{/LoginForm}"  method="post">
 			<div id="fade-box">
-				<input type="text" name="username" id="username"
+				<input type="text" name="username" id="username" th:field="*{klient.imie}"
 					placeholder="Podaj swą godność" required>
 				<!-- <input type="password" placeholder="Password" required> -->
 
 				<button>Log In</button>
+				
 				<div>
 					<p>
 						<a style="text-decoration: none; font-size: 20px; Color: RED"
 							href="http://localhost:8080/domowaAI">Home</a>
+							<p style= color:yellow;font-size:15px  th:text=" ${klient.imie}" />
 					</p>
 				</div>
 			</div>
