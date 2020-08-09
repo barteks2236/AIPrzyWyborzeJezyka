@@ -8,18 +8,19 @@
 <body>
 	<h1>J.A.R.V.I.S.</h1>
 
-<!-- 	<p>Witaj! Jestem Java Artificial Rare Virtual Inteligent System, ale mów mi J.A.R.V.I.S</p> -->
+ 	<p>P.S. J.A.R.V.I.S jest jeszcze młody i nie zna wszystkich słów, w miarę możliwości postaraj się odpowiadać jednym, max dwoma słowami, nalepiej sugerowanymi przez niego </p>
 
 
 	<div class="container">
 		<div class="console">
 
 			<form action="#" th:action="@{/JARVISchat}" method="post">
-
-				<p th:text="'J.A.R.V.I.S.: ' + ${odpowiedz.imie} + ${zapytanie.y} " />
 				
 				<div class="text-container">
 				<p th:text="${odpowiedz.imie} + ': ' + ${odpowiedz.x}  "></p>
+				<p th:text="'J.A.R.V.I.S.: ' + ${odpowiedz.imie} + ${zapytanie.y} " />
+				
+				
 
 				<!-- <p th:text="${odpowiedz.imie} +': pisze...' "></p> -->
 				</div>
@@ -30,7 +31,7 @@
 
 				<section class="stark-login">
 					<div class="fade-box">
-						<input type="text" placeholder="Pisz tutaj" required th:field=" ${odpowiedz.odp} ">
+						<input type="text" placeholder="Pisz tutaj" required th:field=" ${odpowiedz.odp}" >
 						<button>Wyślij</button>
 					</div>
 				</section>

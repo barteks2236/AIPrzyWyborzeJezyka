@@ -82,10 +82,10 @@ p {
   font-size: 13px;
   font-size: 1.3rem;
   height: 40px;
-  margin: 20px auto 10px;
+  margin: 200px auto 10px;
   padding: 0 10px;
   text-shadow: 0 -1px 0 #000;
-  width: 400px;
+  width: 800px;
 }
 .stark-login input:focus {
   animation: box-glow 1s ease-out infinite alternate;
@@ -99,6 +99,7 @@ p {
 .stark-login input:invalid {
   border: 2px solid red;
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.2), inset 0 0 5px rgba(255, 0, 0, 0.1), 0 2px 0 #000;
+  
 }
 .stark-login button {
   animation: input-entry 3s ease-in;

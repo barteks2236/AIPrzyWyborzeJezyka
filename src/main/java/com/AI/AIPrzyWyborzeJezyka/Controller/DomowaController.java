@@ -29,6 +29,7 @@ public class DomowaController {
 
 	@GetMapping("/JARVISchat")
 	public String JARVISchat(@ModelAttribute Odpowiedzi odp, ZapytaniaJarvis pyt, Model model) {
+				
 		model.addAttribute("odpowiedz", odp);
 		model.addAttribute("zapytanie", pyt);
 		
@@ -52,9 +53,6 @@ public class DomowaController {
 
 		model.addAttribute("odpowiedz", odp);
 		model.addAttribute("zapytanie", pyt);
-
-		
-//			 Odpowiedzi.daneOdp.add(odp);
 		
 		ZapytaniaJarvis.y = ZapytaniaJarvis.danePytan.get(n);
 		Odpowiedzi.daneOdp2.add(odp.getOdp());
@@ -62,19 +60,43 @@ public class DomowaController {
 		System.out.println(Odpowiedzi.daneOdp2);
 		Odpowiedzi.imie = Odpowiedzi.daneOdp2.get(0);
 		Odpowiedzi.x = Odpowiedzi.daneOdp2.get(n);
-		n++;
+		
 		System.out.println(ZapytaniaJarvis.danePytan.size() + "a n=" + n);
+		
+
+		if (n==1 && !Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("tak")) {
+			return "domowaAI";
+		}
+		
+		if (n==2 && !Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("ok")) {
+			return "domowaAI";
+		}
+		
+		if (n==3 && (Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("chce być programistą") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("chce byc programistą") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("programistą")
+				|| Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("chce być programistką") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("chce byc programistką") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("programistką") 
+				|| Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("programista") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("programistka"))) {
+			Odpowiedzi.waga+=1;
+		}
+		if (n==3 && (Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("biznes") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("otworzyć biznes") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("założyć biznes")
+				|| Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("startup") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("start up") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("rozkrecic cos") 
+				|| Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("rozkręcić biznes") || Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("rozkręcić coś"))) {
+			Odpowiedzi.waga+=2;
+		}
+		else
+			Odpowiedzi.waga+=3;
+		
+		
+
+		n++;
+		
+		
 		
 		if (ZapytaniaJarvis.danePytan.size()==n){
 			System.out.println("Koniec pytań");
 			return "domowaAI";
 		}		
-		
-		
 		else
-		
-		
-		return "JARVISchat";
+			return "JARVISchat";
 		
 //			 System.out.println(Odpowiedzi.daneOdp);
 		

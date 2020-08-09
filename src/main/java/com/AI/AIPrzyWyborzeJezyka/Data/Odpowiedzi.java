@@ -7,13 +7,13 @@ import com.AI.AIPrzyWyborzeJezyka.Controller.DomowaController;
 
 
 public class Odpowiedzi {
-
+	
 	public String odp;
 	public static String x; 	// Zmienna String konkretnego pytania	
 	public static String imie; 
 	public static List<Odpowiedzi> daneOdp = new ArrayList<Odpowiedzi>();
 	public static List<String> daneOdp2 = new ArrayList<String>();
-	
+	public static int waga;
 //	public Osoba() {}
 	
 //	public Osoba(String imie) {
@@ -42,6 +42,15 @@ public class Odpowiedzi {
 	
 	public String getImie() {
 		return imie;
+	}
+
+
+	public void setWaga(int waga) {
+		Odpowiedzi.waga = waga;
+	}
+	
+	public int getWaga() {
+		return waga;
 	}
 	
 	@Override
