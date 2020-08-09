@@ -18,14 +18,14 @@
 <body>
 	<div id="logo">
 		<h1>
-			<i> BARTOSZ&SARA INDUSTRIES</i>
+			<i> BARTOSZ & SARA INDUSTRIES</i>
 		</h1>
 	</div>
 	<section class="stark-login">
 <!-- http://localhost:8080/JARVISchat -->
-		<form action="#" th:action="@{/LoginForm}"  method="post">
+		<form action="#" th:action="@{/JARVISchat}"  method="get">
 			<div id="fade-box">
-				<input type="text" name="username" id="username" th:field="*{klient.imie}"
+				<input type="text" name="username" id="username" th:field="*{odpowiedz.odp}"
 					placeholder="Podaj swą godność" required>
 				<!-- <input type="password" placeholder="Password" required> -->
 
@@ -35,7 +35,7 @@
 					<p>
 						<a style="text-decoration: none; font-size: 20px; Color: RED"
 							href="http://localhost:8080/domowaAI">Home</a>
-							<p style= color:yellow;font-size:15px  th:text=" ${klient.imie}" />
+							<p style= color:yellow;font-size:15px  th:text=" ${odpowiedz.odp}"></p>
 					</p>
 				</div>
 			</div>
