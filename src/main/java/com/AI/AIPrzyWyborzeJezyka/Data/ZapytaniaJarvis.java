@@ -18,22 +18,23 @@ public class ZapytaniaJarvis {
 		
 		
 /*1*/		danePytan.add(", Fajne imię, miło mi Cię poznać, ja jestem Java Artificial Rare Virtual Inteligent System, ale mów mi J.A.R.V.I.S.\n"
-						+ " Jesteś tutaj bo szukasz odpowiedniego języka programowania do nauki, tak czy nie? Jeśli nie to przeniosę Cię na strone główną :P ");
+						+ " Jesteś tutaj bo chcesz zostać zapewne programistą, a ja Ci w tym pomogę. Czy wiesz jakim typem programisty chcesz być? "
+						+ "Gry(1), Web(2), Mobile(3), a może Analiza danych(4)? Odpowiedz jednym słowem lub cyfrą ;)");
 
-/*2*/		danePytan.add(", w takim razie świetnie trafiłeś, postaram Ci się pomóc ale żebym mógł to zrobić najlepiej jak potrafię to musisz mi odpowiedzieć na kilka ważnych pytań, ok? "
-		+ "Bo jeśli nie, to oddeleguje Cię na strone główną, jestem zapracowanym AI :P");
-/*3*/		danePytan.add(", czy wiesz może w jakim celu chcesz uczyć się programować? Chcesz pracować jako PROGRAMISTA czy może otworzyć jakiś swój BIZNES, może STARTUP? A może chcesz po prostu zrobić coś FAJNEGO "
-				+ "lub nauczyć się czegoś NOWEGO? Odpowiedz jednym słowem proszę, wciąż uczę się waszego języka :) ");
-/*4*/		danePytan.add(", czy kiedykolwiek pojawiła się jakaś styczność z programowaniem inaczej niż jako użytkownik? ");
-/*5*/		danePytan.add(", jest może jakiś konkretny kierunek który Cię interesuje? Gry, Web, Mobile, Desktop software, a może Analiza danych? Odpowiedz jednym słowem ;) ");
-/*6*/		danePytan.add(", PC czy Mobile? Na które urządzenia chesz pisać programy? ");
-/*7*/		danePytan.add(", wolisz grafikę 2D czy 3D? ");
-/*8*/		danePytan.add(", front-end skupia się na tym co widzi użytkownik, a back-end na całej mechanice działania programu, co bardziej Cię interesuje? ");
-/*9*/		danePytan.add(", Windows, MacOs czy może Android? Na jaką platformę chcesz pisać swoje programy? ");
-/*10*/		
+/*2*/		danePytan.add(", czy jesteś tu pierwszy raz? Tak(1) czy nie(2)?");
 
+/*3*/		danePytan.add(", świetny wybór, a na jakie systemy? Windows(1), MacOs(2) czy może Android(3)?");
 
-/*KONIEC*/	danePytan.add(", Jesli widzisz ten tekst to skonczyły mi się pytania, loading... ");		// ten tekst ma się NIE WYSWIETLAC, dodatkowa wartośc tabeli zeby zakonczyc, nie kasowac
+/*4*/		danePytan.add(", wolisz gdy widzisz efekt swojej pracy(1) czy wystarczy Ci logika działania(2) czegoś? ");
+
+/*5*/		danePytan.add(", w jakim stopniu posiadasz wiedzę z programowania w skali 1-3? gdzie 1 to słabo a 3 dobrze");
+
+///*5*/		danePytan.add(", czy byłem pomocny? Tak(1) czy nie(2)?");
+
+/*6*/ 		danePytan.add(", dziękuję za współpracę, już wiem jaki języ programowani jest dla Ciebie odpowiedni, pożegnaj się ze mną aby uzyskać odpowiedz, do zobaczenia! ");
+
+	
+/*KONIEC*/	danePytan.add(", Nie rozumiem. Jesli widzisz ten tekst to skonczyły mi się pytania, loading... ");		// ten tekst ma się NIE WYSWIETLAC, dodatkowa wartośc tabeli zeby zakonczyc, nie kasowac
 	}
 
 	
