@@ -61,21 +61,17 @@ function render() {
 </script>
 
 <div id="title">
-	<h1>Która specjalizacja interesuje Cię najbardziej?</h1>
+	<h1>W tym przypadku najlepszym wyborem będzie:</h1>
 </div>
 
-<a style="text-decoration:none" href="/aplikacje">
-	<button class="button button2">Aplikacje</button></a>
-<a style="text-decoration:none" href="/gry">
-	<button class="button button2">Gry</button></a>
-<a style="text-decoration:none" href="/dataScience">
-	<button class="button button2">Data science</button></a>
-<a style="text-decoration:none" href="/machineLearning">
-	<button class="button button2">AI/Machine Learning</button></a>
-<a style="text-decoration:none" href="/bazyDanych">
-	<button class="button button2">Bazy danych</button></a>
-<a style="text-decoration:none" href="/propozycja">
-	<button class="button button2">Nie wiem, zaproponuj coś</button></a>
+<div class="container1">
+	<div class="gallery" th:each="jezykProgramowania : ${listaJezykow}"><br>
+		<img alt="brak zdjecia" th:src="@{'/Logo/'} + ${jezykProgramowania.getLink()}" width="600" height="400"><br>
+	</div>
+</div>
+
+<a style="text-decoration:none" href="/domowaAI">		
+	<button class="button button2">Powrót do głównej strony</button></a>
 
 </body>
 </html>
