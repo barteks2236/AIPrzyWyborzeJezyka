@@ -138,5 +138,25 @@ public class DomowaController {
 
 		return "LoginForm";
 	}
+	
+	@GetMapping("/Veronica")
+	public String Veronica() {
+		return "Veronica";
+	}
+	
+	@GetMapping("/programista")
+	public String Programista() {
+		return "programista";
+	}
+	
+	@GetMapping("/projekt")
+	public String Projekt() {
+		return "projekt";
+	}
+	
+	@GetMapping("/dlaczego")
+	public String Dlaczego() {
+		return "dlaczego";
+	}
 
 }

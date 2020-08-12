@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>VERONICA</title>
+<link rel="stylesheet" href="styleV.css">
+</head>
+<body>
+<canvas id="psysdisplayed34537"></canvas><br>
+<script>
+var width = 600; 
+var height = 300; 
+var vbuf; 
+var pstart; 
+var nump; 
+var canvasElement; 
+var gl; 
+window.onload = function() { 
+	canvasElement = document.getElementById("psysdisplayed34537"); 
+	canvasElement.width = width; 
+	canvasElement.height = height; 
+	gl = canvasElement.getContext("webgl"); 
+	if (!gl) { gl = canvasElement.getContext("experimental-webgl"); 
+	if (!gl) { alert("WebGL not supported!");}} 	
+nump = 60000; 
+pstart = new Float32Array(nump*2); 
+var i = nump; 
+while (i--) {
+	var ai =i*2;
+	var spawnAng = Math.random()*Math.PI*2.;
+	var spawnDist = Math.random();
+	while (spawnDist < 0.3) {spawnDist = Math.random();} 
+	var ai = i*2; pstart[ai++] = Math.sin(spawnAng)*spawnDist; 
+	pstart[ai] = Math.cos(spawnAng)*spawnDist; }	
+vbuf = gl.createBuffer(); 
+gl.bindBuffer(gl.ARRAY_BUFFER,vbuf); 
+gl.bufferData(gl.ARRAY_BUFFER,pstart,gl.STATIC_DRAW); 
+var vsh = gl.createShader(gl.VERTEX_SHADER); 
+gl.shaderSource(vsh, " precision mediump float; attribute vec2 Vertex; uniform float Time; varying vec4 Color; void main() { gl_PointSize = 1.; float plen = -Time+length(Vertex); float rt = mod(plen,1.); vec2 v = Vertex*rt; float rot = length(v*4.)-Time*1.; vec2 rv = vec2(sin(rot),cos(rot)); v = vec2(v.x*rv.y - v.y*rv.x, v.x*rv.x + v.y*rv.y); v *= mat2(1.-sin(rt),sin(rt+rot),sin(rt+rot),cos(rt+rot)); plen = plen*12. + (length(v-Vertex)*plen/4.+Time); Color = vec4(cos(plen*1.2+.2523)*.5+.5, cos(plen*.857+.3234)*.5+.5, cos(plen*1.39845+.3725)*.5+.5, .4); gl_Position = vec4(v,0.,1.); }"); 
+gl.compileShader(vsh); 
+var fsh = gl.createShader(gl.FRAGMENT_SHADER); 
+gl.shaderSource(fsh,"precision mediump float; varying vec4 Color; void main() { gl_FragColor = Color; }");
+gl.compileShader(fsh); 
+var program = gl.createProgram(); 
+gl.attachShader(program,vsh); 
+gl.attachShader(program,fsh); 
+gl.linkProgram(program); 
+gl.useProgram(program); 
+var vattr = gl.getAttribLocation(program,"Vertex"); 
+gl.enableVertexAttribArray(vattr);
+gl.vertexAttribPointer(vbuf,2,gl.FLOAT,false,4,0); 
+tuni = gl.getUniformLocation(program,"Time"); 
+gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);gl.disable(gl.DEPTH_TEST);gl.clearColor(0.1,0.1,0.1,1); 
+startTime = Date.now(); render(); }; 
+var tuni,startTime; 
+function render() { 
+	gl.clear(gl.COLOR_BUFFER_BIT); 
+	gl.uniform1f(tuni,(Date.now()-startTime)/10000); 
+	gl.drawArrays(gl.POINTS,0,nump); 
+	window.requestAnimationFrame(render); }
+</script>
+
+<div id="title">
+	<h1>Dlaczego programowanie jest takie popularne?</h1>
+</div>	
+
+	<p>Branża informatyczna rozwija się tak szybko, że już dziś brakuje na rynku wykwalifikowanych programistów. 
+	Przewiduje się też, że w&nbsp;niedalekiej przyszłości nawet w&nbsp;zawodach niezwiązanych bezpośrednio z&nbsp;nowymi technologiami będą wymagane przynajmniej podstawowe umiejętności programistyczne. 
+	Dlatego o&nbsp;potrzebie nauki programowania w&nbsp;jak najwcześniejszym wieku mówi się coraz częściej i&nbsp;wprowadza się ją w&nbsp;szkołach jako obowiązkowy przedmiot nauczania
+	[<a href="http://mobolab.org.pl/dlaczego-warto-uczyc-sie-programowania/">1</a>].
+	</p>
+	<p>Umiejętności programowania to także umiejętności analitycznego myślenia i&nbsp;rozwiązywania problemów – nie tylko tych technicznych. 
+	Programowanie bywa nazywane „trzecim językiem”, który – obok języka ojczystego i&nbsp;przynajmniej jednego języka obcego – warto znać, by&nbsp;zrozumieć współczesny świat i&nbsp;zachodzące w&nbsp;nim zmiany. 
+	Ucząc się programowania lepiej poznajemy cyfrową rzeczywistość, która nas otacza, bardziej świadomie posługujemy się nowymi technologiami, a&nbsp;przede wszystkim – pewniej i&nbsp;bezpieczniej korzystamy z&nbsp;wszechobecnych elektronicznych urządzeń i&nbsp;usług
+	[<a href="http://mobolab.org.pl/dlaczego-warto-uczyc-sie-programowania/">1</a>].
+	</p>
+	
+<div id="title">
+	<h1>Na czym polega?</h1>
+</div>		
+	<p>Programowanie polega na&nbsp;projektowaniu, tworzeniu, testowaniu i&nbsp;utrzymywaniu kodu źródłowego programów komputerowych oraz urządzeń wyposażonych w&nbsp;mikrokontrolery. 
+	Programista w&nbsp;swojej codziennej pracy wykorzystuje wiedzę z&nbsp;wielu dziedzin. 
+	Aby dobrze pisać programy, należy opanować struktury danych, algorytmikę oraz posiadać wiedzę o&nbsp;kompilatorach. 
+	Najważniejszym elementem jest jednak znajomość języków programowania i&nbsp;umiejętność ich praktycznego zastosowania
+	[<a href="https://codecool.com/pl/wiedza/programowanie-co-to-jest-i-jak-zaczac/">2</a>].
+	</p>
+	<p>Języki programowania są narzędziem, z&nbsp;których pomocą uzyskujesz zamierzony efekt, czyli wprowadzasz działanie wymyślonego algorytmu w&nbsp;życie. 
+	Podczas wyboru języka programowania najważniejsze jest myślenie i&nbsp;jasno określony cel działania programu. 
+	Każdy z&nbsp;języków ma swoje wady i&nbsp;zalety, każdy z&nbsp;nich może pomóc nam na&nbsp;inny sposób. 
+	Jako programista sam decydujesz, z&nbsp;jakich narzędzi (czyt. języków programowania) skorzystasz w&nbsp;swojej pracy, by&nbsp;osiągnąć założony rezultat
+	[<a href="https://codecool.com/pl/wiedza/programowanie-co-to-jest-i-jak-zaczac/">2</a>].
+	</p>
+	
+<div id="title">
+	<h1>Czy warto?</h1>
+</div>
+	<p>Praca programisty to&nbsp;bardzo specyficzny zawód, do&nbsp;którego potrzebne są&nbsp;odpowiednie predyspozycje. 
+	Poniżej znajdziesz listę rzeczy, które musisz rozważyć zanim zdecydujesz, czy&nbsp;programowanie jest dla Ciebie
+	[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+	</p>
+	
+	<h2>Oczekiwania finansowe</h2>
+	
+		<p>Wiele osób decyduje się na&nbsp;karierę w&nbsp;IT, myśląc, że&nbsp;od&nbsp;razu będą zarabiały 10 lub 15 tysięcy „na&nbsp;rękę”. 
+		Na&nbsp;takie zarobki można w&nbsp;IT liczyć, ale&nbsp;dopiero na&nbsp;poziomie Seniora. 
+		Jeżeli więc Twoją motywacją jest głównie wysokie wynagrodzenie – programowanie może nie&nbsp;być dla Ciebie. 
+		Według naszych statystyk na&nbsp;temat tego, ile zarabia programista po&nbsp;C_school, wynika, że&nbsp;pensja w&nbsp;pierwszym roku pracy waha się od&nbsp;3 do&nbsp;4 tysięcy netto. 
+		Oczywiście nie jest to&nbsp;mało, biorąc pod uwagę niewielkie doświadczenie, ale&nbsp;jeżeli zestawi się to z&nbsp;oczekiwaniami finansowymi na&nbsp;poziomie 15 tysięcy, wygląda to&nbsp;już gorzej. 
+		Na&nbsp;szczęście, jeżeli programowanie naprawdę jest Twoją pasją, możesz liczyć na&nbsp;wzrost zarobków o&nbsp;nawet 60% w&nbsp;&nbsp;ciągu dwóch lat pracy
+		[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+		</p>
+	
+	<h2>Ciągła nauka</h2>
+	
+		<p>Jeśli myślisz, że&nbsp;programowania trzeba nauczyć się raz, a&nbsp;dobrze, to&nbsp;niestety musimy Cię rozczarować. 
+		Nawet najlepsi programiści cały czas się uczą i&nbsp;rozwijają, ponieważ na&nbsp;rynku cały czas pojawiają się nowe technologie i&nbsp;rozwiązania. 
+		Praca jako programista jest wymagająca i&nbsp;ambitna, i&nbsp;cały czas będzie wymagała od&nbsp;Ciebie zainteresowania branżą, i&nbsp;zwiększania swojej wiedzy. 
+		Jeżeli więc nie masz ochoty ciągle się udoskonalać – programowanie nie jest dla Ciebie.
+		[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+		</p>
+	
+	
+	<h2>Warunki pracy</h2>
+	
+		<p>Nie wszyscy sprawdzą się w&nbsp;pracy jako programista. 
+		Dlaczego? Ponieważ często jest to praca w&nbsp;bardzo elastycznych godzinach, zdalna w&nbsp;części lub w&nbsp;całości. 
+		To&nbsp;wymaga dużej samodyscypliny i&nbsp;umiejętności zorganizowania swojej pracy. 
+		Dodatkowo, praca programistów jest bardzo zorientowana na&nbsp;wykonywanie zadań. 
+		To&nbsp;oznacza, że&nbsp;pracodawcę nie będzie interesowało czy jesteś w&nbsp;biurze, czy pracujesz z&nbsp;domu, czy jesteś ubrany w&nbsp;krawat czy krótkie spodenki i&nbsp;klapki. 
+		Ważne jest czy i&nbsp;jak wykonałeś swoje zadania. 
+		Jeżeli wolisz „tradycyjną” pracę, ze&nbsp;stałymi godzinami – programowanie może Ci się nie spodobać
+		[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+		</p>
+		
+	<h2>Komunikacja i praca zespołowa</h2>
+	
+		<p>Wiele osób nadal wierzy w&nbsp;stereotyp programisty-introwertyka, który koduje w&nbsp;zamkniętym pomieszczeniu i&nbsp;nie lubi kontaktów z&nbsp;ludźmi. 
+		Gdyby takie osoby zobaczyły prawdziwy zespół IT przy pracy, zapewne bardzo by&nbsp;się zdziwiły. 
+		Programiści muszą mieć świetne umiejętności komunikacyjne i&nbsp;pracy zespołowej. 
+		W&nbsp;końcu w&nbsp;zespole zawsze jest więcej niż jedna osoba, a&nbsp;zwykle ról w&nbsp;zespole jest naprawdę dużo. 
+		Jeżeli nie czujesz się pewnie w&nbsp;komunikacji z&nbsp;innymi, przekazywaniu konstruktywnych uwag i&nbsp;współpracowaniu z&nbsp;resztą zespołu – lepiej nie zabieraj się za&nbsp;programowanie. 
+		Tylko efektywna praca całego zespołu pozwala zakończyć projekt sukcesem
+		[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+		</p>
+		
+	<h2>Logiczne i analityczne myślenie</h2>
+		
+		<p>Jeżeli nie przepadasz za&nbsp;łamigłówkami, nie lubisz zagadek logicznych i&nbsp;wyzwań – programowanie nie będzie dla Ciebie przyjemne. 
+		Programiści w&nbsp;swojej pracy spotykają najróżniejsze problemy do&nbsp;rozwiązania, nad którymi często trzeba spędzić trochę czasu, zanim znajdzie się rozwiązanie. 
+		Dodatkowo, składnia wszystkich języków programowania opiera się na&nbsp;logicznych komendach, więc logiczne myślenie to&nbsp;must have każdego Developera!
+		[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+		</p>
+	
+	<h2>Wyzwania</h2>
+		
+		<p>Praca programisty stawia przed nim dużo wyzwań i&nbsp;problemów. 
+		Jest to&nbsp;naprawdę intensywna i&nbsp;ambitna praca, która daje jednak dużo satysfakcji, pod warunkiem, że&nbsp;lubi się wyzwania. 
+		Jeżeli wolałbyś spokojną, statyczną pracę – programowanie to&nbsp;nie wybór dla Ciebie. 
+		Dynamika zespołu i&nbsp;pracy nad projektem sprawia, że&nbsp;praca jako programista jest ekscytująca i&nbsp;jest więcej niż tylko pracą – dla większości programistów to&nbsp;prawdziwa pasja
+		[<a href="https://www.connectis.pl/blog/2019/08/23/dlaczego-programowanie-nie-jest-dla-ciebie/">3</a>].
+		</p>	
+
+</body>
+</html>
