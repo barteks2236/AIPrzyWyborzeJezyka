@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.AI.AIPrzyWyborzeJezyka.Data.ListaJezykow;
 import com.AI.AIPrzyWyborzeJezyka.Data.Odpowiedzi;
 import com.AI.AIPrzyWyborzeJezyka.Data.ZapytaniaJarvis;
 import com.AI.AIPrzyWyborzeJezyka.Neuron.Data;
@@ -264,6 +265,123 @@ public class DomowaController {
 		model.addAttribute("zapytanie", pyt);
 
 		return "LoginForm";
+	}
+	
+	
+	
+	
+	
+// Nawigacja VERONICA
+	
+	@GetMapping("/Veronica")
+	public String getVeronica() {
+		return "Veronica";
+	}
+	
+	@GetMapping("/programista")
+	public String getProgramista() {
+		return "programista";
+	}
+	
+	@GetMapping("/projekt")
+	public String getProjekt() {
+		return "projekt";
+	}
+	
+	@GetMapping("/gry")
+	public String getGry() {
+		return "gry";
+	}
+	
+	@GetMapping("/gry2")
+	public String getGry2(Model model) {
+		model.addAttribute("listaJezykowGry", ListaJezykow.getListaJezykowGry());
+		return "gry2";
+	}
+	
+	@GetMapping("/gry3")
+	public String getGry3(Model model) {
+		model.addAttribute("listaJezykowGry2", ListaJezykow.getListaJezykowGry2());
+		return "gry3";
+	}
+	
+	@GetMapping("/aplikacje")
+	public String getAplikacje() {
+		return "aplikacje";
+	}
+	
+	@GetMapping("/aplikacje2")
+	public String getAplikacje2() {
+		return "aplikacje2";
+	}
+	
+	@GetMapping("/aplikacje3")
+	public String getAplikacje3() {
+		return "aplikacje3";
+	}
+	
+	@GetMapping("/aplikacje4")
+	public String getAplikacje4() {
+		return "aplikacje4";
+	}
+	
+	@GetMapping("/iOS")
+	public String getIOS(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(4));
+		return "iOS";
+	}
+	
+	@GetMapping("/Java")
+	public String getJava(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(5));
+		return "Java";
+	}
+	
+	@GetMapping("/Windows")
+	public String getWindows(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(6));
+		return "Windows";
+	}
+	
+	@GetMapping("/dataScience")
+	public String getDataScience(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow());
+		return "dataScience";
+	}
+	
+	@GetMapping("/machineLearning")
+	public String getMachineLearning(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(1));
+		return "machineLearning";
+	}
+	
+	@GetMapping("/stronaInt")
+	public String getStronaInt(Model model) {
+		model.addAttribute("listaJezykowFront", ListaJezykow.getListaJezykowFront());
+		return "stronaInt";
+	}
+	
+	@GetMapping("/backend")
+	public String getBackend(Model model) {
+		model.addAttribute("listaJezykowBack", ListaJezykow.getListaJezykowBack());
+		return "backend";
+	}
+	
+	@GetMapping("/bazyDanych")
+	public String getBazyDanych(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(3));
+		return "bazyDanych";
+	}
+	
+	@GetMapping("/propozycja")
+	public String getPropozycja(Model model) {
+		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(1));
+		return "propozycja";
+	}
+	
+	@GetMapping("/dlaczego")
+	public String getDlaczego() {
+		return "dlaczego";
 	}
 
 	@GetMapping("/OdpJARVIS")
