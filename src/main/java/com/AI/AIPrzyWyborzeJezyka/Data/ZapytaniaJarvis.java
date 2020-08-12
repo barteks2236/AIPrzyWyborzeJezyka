@@ -18,10 +18,10 @@ public class ZapytaniaJarvis {
 		
 		
 /*1*/		danePytan.add(", Fajne imię, miło mi Cię poznać, ja jestem Java Artificial Rare Virtual Inteligent System, ale mów mi J.A.R.V.I.S.\n"
-						+ " Jesteś tutaj bo chcesz zostać zapewne programistą, a ja Ci w tym pomogę. Czy wiesz jakim typem programisty chcesz być? "
-						+ "Gry(1), Web(2), Mobile(3), a może Analiza danych(4)? Odpowiedz jednym słowem lub cyfrą ;)");
+						+ " czy jesteś tu pierwszy raz? Tak(1) czy nie(2)? Odpowiedz jednym słowem lub cyfrą ;)");
 
-/*2*/		danePytan.add(", czy jesteś tu pierwszy raz? Tak(1) czy nie(2)?");
+/*2*/		danePytan.add(", Jesteś tutaj bo chcesz zostać zapewne programistą, a ja Ci w tym pomogę. Czy wiesz jakim typem programisty chcesz być? \"\r\n" + 
+		"					+ \"Gry(1), Web(2), Mobile(3), a może Analiza danych(4)??");
 
 /*3*/		danePytan.add(", świetny wybór, a na jakie systemy? Windows(1), MacOs(2) czy może Android(3)?");
 

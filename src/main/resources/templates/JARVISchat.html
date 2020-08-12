@@ -2,59 +2,55 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-	<title>JARVISchat</title>
-	<link rel="stylesheet" href="JARVISchatStyle.css">
+<title>JARVISchat</title>
+<link rel="stylesheet" href="JARVISchatStyle.css">
 </head>
 <body>
 	<h1>J.A.R.V.I.S.</h1>
 
-<p>J.A.R.V.I.S.: Mam prośbę, odpowiadaj mi na razie tylko liczbami w skali 1-3, gdzie 1 to zle lub slabo a 3 dobrze </p>
+	<!-- <p>P.S. J.A.R.V.I.S jest jeszcze młody i nie zna wszystkich słów, w miarę możliwości postaraj się odpowiadać jednym, max dwoma słowami, nalepiej sugerowanymi przez niego </p> -->
 
-<!-- <p>P.S. J.A.R.V.I.S jest jeszcze młody i nie zna wszystkich słów, w miarę możliwości postaraj się odpowiadać jednym, max dwoma słowami, nalepiej sugerowanymi przez niego </p> -->
 
-	
 
 	<div class="container">
 		<div class="console">
 
 			<form action="#" th:action="@{/JARVISchat}" method="post">
-				
+
 				<div class="text-container">
-				<p th:text="${odpowiedz.imie} + ': ' + ${odpowiedz.x}  "></p>
-				<p th:text="'J.A.R.V.I.S.: ' + ${odpowiedz.imie} + ${zapytanie.y} " />
-				
-				
-
-				<!-- <p th:text="${odpowiedz.imie} +': pisze...' "></p> -->
+					<!-- 				<p th:text="${odpowiedz.imie} + ': ' + ${odpowiedz.x}  "></p> -->
+					<p th:text="'J.A.R.V.I.S.: ' + ${odpowiedz.imie} + ${zapytanie.y} " />
 				</div>
-
-
-
-
 
 				<section class="stark-login">
 					<div class="fade-box">
-						<input type="text" placeholder="Pisz tutaj" required th:field=" ${odpowiedz.odp}" >
+						<input type="text" placeholder="Pisz tutaj" required
+							th:field=" ${odpowiedz.odp}">
 						<button>Wyślij</button>
 					</div>
 				</section>
 			</form>
 
 
-
-			<p>
+			<h4>
 				<a style="text-decoration: none; font-size: 40px; Color: RED"
-					href="http://localhost:8080/JARVISchat">Powrót</a>
-<p>
-				<a style="text-decoration: none; font-size: 40px; Color: RED; float: right"
+					href="http://localhost:8080/JARVISchat">Powrót</a> <a
+					style="text-decoration: none; font-size: 40px; Color: RED; float: right"
 					href="http://localhost:8080/domowaAI">Główna</a>
-			</p>
-			</p>
-			
+			</h4>
+
+
 
 		</div>
 	</div>
 	</form>
+	
+	
+	
+	
+	
+	
+	
 	<!-- partial -->
 	<script
 		src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

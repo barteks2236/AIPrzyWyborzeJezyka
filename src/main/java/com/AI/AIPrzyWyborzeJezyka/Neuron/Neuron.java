@@ -10,8 +10,8 @@ public class Neuron {
 	public int n = 1;
 	public List<Integer> wagi;
 	public List<Data> dane = DomowaController.dane;
-	public int decyzja = DomowaController.czyPomoglem;
-	public int net;
+	public int decyzja=DomowaController.czyPomoglem;
+	public int siatka;
 	public boolean czyWymagaUczenia;
 	public static boolean czyWymagaPowtorki;
 
@@ -32,14 +32,15 @@ public class Neuron {
 		for (Data dana : dane) {
 			czyWymagaUczenia = true;
 			do {
-				wyliczNet(dana);
+				wyliczSiatke(dana);
 				podejmijDecyzje(dana);
 				if (czyWymagaUczenia) {
 					korektaWag(dana);
 					czyWymagaPowtorki = true;
 				}
 
-			} while (czyWymagaUczenia);
+			} 
+			while (czyWymagaUczenia);
 		}
 	}
 
@@ -60,18 +61,17 @@ public class Neuron {
 		wagi = noweWagi;
 	}
 
-	private void wyliczNet(Data dana) {
+	private void wyliczSiatke(Data dana) {
 		int suma = 0;
 
 		for (int i = 0; i < dana.getData().size(); i++)
 			suma += dana.getData().get(i) * wagi.get(i);
 
-		net = suma;
-
+		siatka = suma;
 	}
 
 	private void podejmijDecyzje(Data dana) {
-		decyzja = (net >= 0 ? 1 : 0);
+		decyzja = (siatka >= 0 ? 1 : 0);
 		czyWymagaUczenia = decyzja != dana.getDecyzja();
 	}
 

@@ -1,19 +1,30 @@
 @charset "UTF-8";
+
 body {
+
   color: #27f7f7;
   background: #111;
 }
 
 h1 {
+
+  margin: 0.9375em 0.625em;
+  font-family: "Share Tech Mono", Consolas, monaco, monospace;
+  font-weight: 400;
+}
+
+h4 {
+
   margin: 0.9375em 0.625em;
   font-family: "Share Tech Mono", Consolas, monaco, monospace;
   font-weight: 400;
 }
 
 p {
-  margin: 0.9375em 1.25em;
-  font-family: "Oxygen Mono", Consolas, monaco, monospace;
-  font-weight: 400;
+	animation: input-entry 2s ease-in;
+	margin: 0.9375em 1.25em;
+	font-family: "Oxygen Mono", Consolas, monaco, monospace;
+	font-weight: 400;
 }
 
 .container {
@@ -32,6 +43,7 @@ p {
 }
 
 .text-container {
+
   display: inline;
 }
 
@@ -40,18 +52,19 @@ p {
 }
 
 .cursor {
+
   width: 5px;
   background: #27f7f7;
   margin-left: -7px;
 }
 
 #fade-box {
-  animation: input-entry 3s ease-in;
+
   z-index: 4;
 }
 
 .stark-login form {
-  animation: form-entry 3s ease-in-out;
+
   background: #111;
   background: linear-gradient(#004746, #111111);
   border: 6px solid #00a4a2;
@@ -66,11 +79,13 @@ p {
   transition: 1s all;
 }
 .stark-login form:hover {
+
   border: 6px solid #00fffd;
   box-shadow: 0 0 25px #00fffd;
   transition: 1s all;
 }
 .stark-login input {
+
   background: #222;
   background: linear-gradient(#333333, #222222);
   border: 1px solid #444;
@@ -88,7 +103,7 @@ p {
   width: 800px;
 }
 .stark-login input:focus {
-  animation: box-glow 1s ease-out infinite alternate;
+  animation: box-glow 4s ease-out infinite alternate;
   background: #0B4252;
   background: linear-gradient(#333933, #222922);
   border-color: #00fffc;
@@ -102,7 +117,7 @@ p {
   
 }
 .stark-login button {
-  animation: input-entry 3s ease-in;
+
   background: #222;
   background: linear-gradient(#333333, #222222);
   box-sizing: content-box;
@@ -137,4 +152,16 @@ p {
   background: linear-gradient(#393939, #292929);
   box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
   top: 1px;
+}
+
+@keyframes input-entry {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

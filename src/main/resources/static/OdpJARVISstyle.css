@@ -1,14 +1,18 @@
 @charset "UTF-8";
 body {
-  margin:0px;
+
+  	margin:0px;
 }
 .id-card-wrapper {
+	animation: input-entry 3s ease-in;
   height: 100vh;
   width:100%;
   background-color: #091214;
   display: flex;
 }
 .id-card {
+		animation: input-entry 3s ease-in;
+	animation: input-entry 2s ease-in;
   flex-basis: 100%;
   max-width: 30em;
   border: 1px solid rgb(97, 245, 245);
@@ -20,6 +24,7 @@ body {
 }
 
 .profile-row {
+		animation: input-entry 3s ease-in;
   display: flex;
 }
 .profile-row .dp {
@@ -89,12 +94,26 @@ body {
   }
 }
 
+@keyframes input-entry {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .profile-row .desc {
+		animation: input-entry 3s ease-in;
   font-family: 'Orbitron', sans-serif;
   color: #ecfcfb;
   text-shadow: 0px 0px 4px #12a0a0;
   letter-spacing: 1px;
 }
 .profile-row .desc h1 {
+		animation: input-entry 3s ease-in;
   margin: 0px;
 }

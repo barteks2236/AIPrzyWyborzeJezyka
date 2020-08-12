@@ -1,0 +1,57 @@
+body {
+	animation: logo-entry 2s ease-in;
+	color: #27f7f7;
+	font-family: Monospace;
+	background: black;
+	font-size: 1.7em;
+}
+
+p {
+  animation: input-entry 3s ease-in;
+  
+}
+
+h1 {
+  animation: input-entry 2s ease-in;
+  
+}
+
+iframe {
+  animation: input-entry 4s ease-in;
+  
+}
+
+.intro {
+  animation: input-entry 4s ease-in;	
+  padding: 10px 20px 5px 20px;
+}
+.middle {
+	  animation: input-entry 4s ease-in;
+  padding: 5px 10px 5px 20px;
+}
+.thumbnail {
+	  animation: input-entry 4s ease-in;
+    background-color: #0F1313;
+    border: 1px solid #27F7F7;
+}
+.thumbnail .caption {
+	  animation: input-entry 4s ease-in;
+    color: #27f7f7;
+}
+.footer{
+	  animation: input-entry 4s ease-in;
+  border-top: 1px solid #27f7f7;
+  padding: 5px 10px 5px 20px;
+}
+
+@keyframes input-entry {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
