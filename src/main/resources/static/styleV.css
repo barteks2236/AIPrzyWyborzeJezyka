@@ -1,10 +1,10 @@
 @charset "UTF-8";
 html, body {
-  color: white; 
-  text-align: center; 
-  background-color: rgb(25,25,25);
-  font-family: Monospace, sans-serif;
-  overflow: auto;
+	color: white;
+	text-align: center;
+	background-color: rgb(25, 25, 25);
+	font-family: Monospace, sans-serif;
+	overflow: auto;
 }
 
 h1{

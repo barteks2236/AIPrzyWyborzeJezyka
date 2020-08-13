@@ -392,13 +392,30 @@ body {
 
 html {
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+	width: 20px;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 5px grey;
+	background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #cedce0;
 }
 
 /* Left Menu */
 #leftmenu {
 	animation: logo-entry 5s ease-in;
-	position: fixed;
+	position: absolute;
 	float: left;
 	margin-left: 50px;
 	width: 210px;
@@ -1163,21 +1180,21 @@ ul {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
 	margin-left: 260px;
-	margin-top: 300px;
+	margin-top: 255px;
 }
 
 #particle1_1 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
 	margin-left: 255px;
-	margin-top: 370px;
+	margin-top: 325px;
 }
 
 #particle1_2 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
 	margin-left: 275px;
-	margin-top: 470px;
+	margin-top: 425px;
 }
 
 #particle1_3 {
@@ -1186,7 +1203,7 @@ ul {
 	color: rgba(2, 255, 255, 0.3);
 	font-size: 90px;
 	margin-left: 190px;
-	margin-top: 620px;
+	margin-top: 590px;
 	transform: rotate(90deg);
 	z-index: -1;
 }
@@ -1218,7 +1235,7 @@ ul {
 #particle5 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
-	height: 180px;
+	height: 150px;
 	margin-top: -90px;
 	margin-left: 230px;
 	border-color: rgba(2, 255, 255, 0.15);
@@ -1227,7 +1244,7 @@ ul {
 #particle6 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
-	height: 180px;
+	height: 150px;
 	margin-top: 5px;
 	margin-left: 3px;
 	border-color: rgba(255, 105, 255, 0.2);
@@ -1236,7 +1253,7 @@ ul {
 #particle7 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
-	height: 180px;
+	height: 150px;
 	margin-top: 5px;
 	margin-left: 3px;
 	border-color: rgba(2, 255, 255, 0.15);
@@ -1245,7 +1262,7 @@ ul {
 #particle8 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
-	height: 400px;
+	height: 350px;
 	margin-left: -232px;
 	margin-top: 280px;
 	border-color: rgba(255, 105, 255, 0.15);
@@ -1254,7 +1271,7 @@ ul {
 #particle9 {
 	animation: logo-entry 3s ease-in;
 	position: fixed;
-	height: 390px;
+	height: 350px;
 	margin-left: 3px;
 	border-color: rgba(255, 105, 255, 0.2);
 }
@@ -1282,7 +1299,7 @@ ul {
 }
 
 #JARVIS {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	margin-top: -20px;
 	margin-left: 25%;
