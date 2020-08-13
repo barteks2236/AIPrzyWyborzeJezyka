@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
+<head>
+<meta charset="UTF-8">
+	<title>Users</title>
+	<link rel="stylesheet" href="OdpJARVISstyle.css">
+</head>
+<body>
+<div class="id-card-wrapper">
+  <div class="id-card">
+    <div class="profile-row">
+      <div class="dp">
+        <div class="dp-arc-outer"></div>
+        <div class="dp-arc-inner"></div>
+        <img src="https://vignette4.wikia.nocookie.net/leonhartimvu/images/d/d7/JARVIS_Logo.png">
+      </div>
+      <div class="desc">
+        <h4>Odpowiedzi i wynik ostatniego użytkownika:</h4>
+            
+
+        
+		<p th:text="'Nazwa: '+ ${odpowiedz.imie} "></p>
+   
+            <p th:text="'Odp. nr 1:   '+ ${odpowiedz.daneOdp2.get(1)}"></p>
+            <p th:text="'Odp. nr 2:   '+ ${odpowiedz.daneOdp2.get(2)}"></p>
+            <p th:text="'Odp. nr 3:   '+ ${odpowiedz.daneOdp2.get(3)}"></p>
+            <p th:text="'Odp. nr 4:   '+ ${odpowiedz.daneOdp2.get(4)}"></p>
+            <p th:text="'Odp. nr 5:   '+ ${odpowiedz.daneOdp2.get(5)}"></p>
+            <p th:text="'Odp. nr 6:   '+ ${odpowiedz.daneOdp2.get(6)}"></p>
+            <p th:text="'Język prog. :   '+ ${odpowiedz.daneOdp2.get(7)}"></p>
+     
+
+					<p>
+						<a style="text-decoration: none; font-size: 20px; Color: RED"
+							href="http://localhost:8080/domowaAI" method="get">Główna</a>
+					</p>
+		</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

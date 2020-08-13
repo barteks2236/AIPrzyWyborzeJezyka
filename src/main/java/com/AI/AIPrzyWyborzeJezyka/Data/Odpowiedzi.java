@@ -13,12 +13,8 @@ public class Odpowiedzi {
 	public static String imie; 
 	public static List<Odpowiedzi> daneOdp = new ArrayList<Odpowiedzi>();
 	public static List<String> daneOdp2 = new ArrayList<String>();
+	public static List<String> daneUsers = new ArrayList<String>();
 	public static int waga;
-//	public Osoba() {}
-	
-//	public Osoba(String imie) {
-//		this.imie = imie;
-//	}
 	
 	public void setOdp(String odp) {
 		this.odp = odp;

@@ -25,7 +25,7 @@ public class DomowaController {
 	public int a = 0, b = 0, c = 0, d = 0; // odpowiedzi danego użytkownika
 	public static int czyPomoglem; // odpowiedz na koniec czy byla pomocna, w przeciwnym wypadku AI nie uczy się na
 									// niej
-
+	public static String w="";
 	int wynik;
 
 	@GetMapping("/domowaAI")
@@ -35,10 +35,10 @@ public class DomowaController {
 		b = 0;
 		c = 0;
 		d = 0;
-		Odpowiedzi.daneOdp2.clear();
-		Odpowiedzi.daneOdp.clear();
+//		Odpowiedzi.daneOdp2.clear();
+//		Odpowiedzi.daneOdp.clear();
 //		dane.clear();		
-		System.out.println("LISTY WYCZYSZCZONE");
+//		System.out.println("LISTY WYCZYSZCZONE");
 		n = 0;
 
 		return "domowaAI";
@@ -72,6 +72,8 @@ public class DomowaController {
 
 		ZapytaniaJarvis.y = ZapytaniaJarvis.danePytan.get(n);
 		Odpowiedzi.daneOdp2.add(odp.getOdp());
+		Odpowiedzi.daneUsers.add(odp.getOdp());	// lista do wyników
+		
 
 		System.out.println(n + ": " + Odpowiedzi.daneOdp2);
 		Odpowiedzi.imie = Odpowiedzi.daneOdp2.get(0);
@@ -202,30 +204,64 @@ public class DomowaController {
 
 		if (n == 6) {
 			
+			Executor.query(
+					"INSERT INTO UsersDataAI (NAZWA, ODP1, ODP2, ODP3, ODP4, ODP5, ODP6, POMOCNY) VALUES ('"
+							+ Odpowiedzi.imie + "', " + "'" + Odpowiedzi.daneOdp2.get(1) + "', '"
+							+ Odpowiedzi.daneOdp2.get(2) + "', '" + Odpowiedzi.daneOdp2.get(3) + "', '"
+							+ Odpowiedzi.daneOdp2.get(4) + "', '" + Odpowiedzi.daneOdp2.get(5) + "', '"
+							+ Odpowiedzi.daneOdp2.get(6) + "', '" + czyPomoglem + "');"
+							);
+			
+			
 			a*=neuron.getRESULT().get(0);
 			b*=neuron.getRESULT().get(1);
 			c*=neuron.getRESULT().get(2);
 			d*=neuron.getRESULT().get(3);
 
+			
+			
 			System.out.println("a:" + a + "; b: "+ b + "; c:" + c + "; d:" + d);
+			
 			
 			if (a > b && a > c && a > d) {
 				System.out.println("C++");
+				w="C++";
+				Odpowiedzi.daneOdp2.add(w);
 				return "C++";
 			}
 			if (b > a && b > c && b > d) {
 				System.out.println("HTML");
+				w="HTML";
+				Odpowiedzi.daneOdp2.add(w);
 				return "HTML";
 			}
 			if (c > b && c > a && c > d) {
 				System.out.println("JAVA");
-				return "JAVA";
+				w="JAVA";
+				Odpowiedzi.daneOdp2.add(w);
+				return "JAVAjarvis";
 			}
 			if (d > b && d > c && d > a) {
 				System.out.println("SQL");
+				w="SQL";
+				Odpowiedzi.daneOdp2.add(w);
 				return "SQL";
 			}
+			
+			if (d >= b && d >= c && d >= a) {
+				System.out.println("Veronica musi pomóc");
+				w="Brak Odp, -> Sugerowana pomoc drugiego AI";
+				Odpowiedzi.daneOdp2.add(w);
+				return "OdpJARVIS";
+				
+			}
+
 		}
+
+
+		
+		
+		
 
 		System.out.println("Odpowiedzi: " + dane + "\n");
 		System.out.println("Stare Wagi:         " + neuron.wagi);
@@ -293,6 +329,28 @@ public class DomowaController {
 
 		return "JezykiProg";
 	}
+
+	@GetMapping("/Users")
+	public String Users(@ModelAttribute Odpowiedzi odp, ZapytaniaJarvis pyt, Model model) {
+
+		model.addAttribute("odpowiedz", odp);
+		model.addAttribute("zapytanie", pyt);
+
+//		ZapytaniaJarvis.y = ZapytaniaJarvis.danePytan.get(n);
+//		Odpowiedzi.daneUsers.add(odp);
+//
+//		System.out.println(n + ": " + Odpowiedzi.daneUsers);
+//		Odpowiedzi.imie = Odpowiedzi.daneOdp2.get(0);
+		return "Users";
+	}
+	
+	@GetMapping("/startSite")
+	public String startSite() {
+
+		return "startSite";
+	}	
+	
+	
 	
 	
 	
@@ -409,5 +467,6 @@ public class DomowaController {
 		return "dlaczego";
 	}
 
+	
 	
 }
