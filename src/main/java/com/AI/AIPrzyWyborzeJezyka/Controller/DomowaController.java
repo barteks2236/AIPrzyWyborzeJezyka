@@ -356,10 +356,10 @@ public class DomowaController {
 		return "iOS";
 	}
 	
-	@GetMapping("/Java")
+	@GetMapping("/JavaV")
 	public String getJava(Model model) {
 		model.addAttribute("listaJezykow", ListaJezykow.getListaJezykow().get(5));
-		return "Java";
+		return "JavaV";
 	}
 	
 	@GetMapping("/Windows")
