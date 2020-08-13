@@ -213,7 +213,7 @@ public class DomowaController {
 				return "HTML";
 			}
 			if (c > b && c > a && c > d) {
-				System.out.println("JAVA");
+				System.out.println("JAVAjarvis");
 				return "JAVA";
 			}
 			if (d > b && d > c && d > a) {
