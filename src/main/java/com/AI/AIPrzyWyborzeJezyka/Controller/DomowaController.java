@@ -44,6 +44,11 @@ public class DomowaController {
 		return "domowaAI";
 	}
 
+	
+	// ----- Nawigacja JARVIS -----
+	
+	
+	
 	@GetMapping("/JARVISchat")
 	public String JARVISchat(@ModelAttribute Odpowiedzi odp, ZapytaniaJarvis pyt, Model model) {
 
@@ -52,9 +57,8 @@ public class DomowaController {
 		n = 0;
 		ZapytaniaJarvis.y = ZapytaniaJarvis.danePytan.get(0);
 		Odpowiedzi.daneOdp2.add(odp.getOdp());
-		System.out.println(Odpowiedzi.daneOdp2);
+		
 		Odpowiedzi.imie = Odpowiedzi.daneOdp2.get(0);
-
 		n++;
 
 		return "JARVISchat";
@@ -227,7 +231,7 @@ public class DomowaController {
 		System.out.println("Stare Wagi:         " + neuron.wagi);
 		System.out.println("Zaktualizowane Wagi " + neuron.getRESULT());
 		System.out.println("Dane wejsciowe      " + Data.data);
-
+		System.out.println(Odpowiedzi.daneOdp2);
 		n++;
 
 //		
@@ -267,7 +271,28 @@ public class DomowaController {
 		return "LoginForm";
 	}
 	
+
+	@GetMapping("/OdpJARVIS")
+	public String OdpJARVIS() {
+		dane.clear();
+//		Odpowiedzi.imie=Odpowiedzi.getImie();
+		Odpowiedzi.daneOdp2.clear();
+		Odpowiedzi.daneOdp.clear();
+		n=1;
+		for (int i=0; i < Odpowiedzi.daneOdp2.size(); i++)
+		{
+			dane.remove(i);
+		}
+		System.out.println(Odpowiedzi.daneOdp2);
+		return "JARVISchat";
+	}
+
 	
+	@GetMapping("/JezykiProg")
+	public String jezykiProgramowania() {
+
+		return "JezykiProg";
+	}
 	
 	
 	
@@ -384,19 +409,5 @@ public class DomowaController {
 		return "dlaczego";
 	}
 
-	@GetMapping("/OdpJARVIS")
-	public String OdpJARVIS() {
-		n--;
-		Odpowiedzi.daneOdp2.remove(n);
-		System.out.println(Odpowiedzi.daneOdp2);
-		return "JARVISchat";
-	}
-
-	
-	@GetMapping("/JezykiProg")
-	public String jezykiProgramowania() {
-
-		return "JezykiProg";
-	}
 	
 }

@@ -21,7 +21,7 @@ h4 {
 }
 
 p {
-	animation: input-entry 2s ease-in;
+	animation: input-entry 1s ease-in;
 	margin: 0.9375em 1.25em;
 	font-family: "Oxygen Mono", Consolas, monaco, monospace;
 	font-weight: 400;
