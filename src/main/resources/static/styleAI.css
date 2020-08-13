@@ -389,7 +389,8 @@ body {
 	font: 20px 'Agency FB', sans-serif;
 }
 
-html, body {
+
+html {
   height: 100%;
   overflow: hidden;
 }
@@ -550,6 +551,7 @@ ul {
   border-radius: 50%;
   box-shadow: 0px 0px 50px 15px rgba(2, 255, 255, 0.3), inset 0px 0px 50px 15px rgba(2, 255, 255, 0.3);
 }
+
 /* VERONICA */
 .arc_reactor2 {
   position: relative;
@@ -1280,30 +1282,27 @@ ul {
 }
 
 #JARVIS {
-	position: relative;
-  	top: 48%;
+	position: absolute;
+	top: 50%;
 	margin-top: -20px;
- 	margin-left: 33%;
- 	margin-right: 70%;
-	animation: logo-entry 5s ease-in;
+	margin-left: 25%;
+	left: 112.5px;
+	animation: logo-entry 7s ease-in;
 	color: #008B8B;
 	width: 20px;
 	height: 20px;
-	font-size: 10%;
-	text-decoration: none;
 }
 
 #VERONICA {
 	position: relative;
-  	top: 53.5%;
-  	margin-top: -75px;
-  	margin-left: 57.5%;
-  	margin-right: 70%;
+  	top: 50%;
+  	margin-top: -155px;
+  	margin-left: 50%;
+  	left: 95px;
 	animation: logo-entry 5s ease-in;
 	color: #ff00ff;
-  	width: 40px;
-	height: 40px;
-	
+  	width: 20px;
+	height: 20px;	
 }
 
 /* <style>
