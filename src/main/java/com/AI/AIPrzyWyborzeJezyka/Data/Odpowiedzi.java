@@ -40,7 +40,7 @@ public class Odpowiedzi {
 		Odpowiedzi.imie = imie;
 	}
 	
-	public String getImie() {
+	public static String getImie() {
 		return imie;
 	}
 
