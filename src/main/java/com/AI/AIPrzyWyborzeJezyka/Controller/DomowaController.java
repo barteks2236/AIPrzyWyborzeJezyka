@@ -350,7 +350,11 @@ public class DomowaController {
 		return "startSite";
 	}	
 	
-	
+	@PostMapping("/error")
+	public String getError() {
+		System.out.println("Błąd");
+		return "error";
+	}
 	
 	
 	
@@ -467,6 +471,5 @@ public class DomowaController {
 		return "dlaczego";
 	}
 
-	
-	
+
 }
