@@ -353,6 +353,7 @@ public class DomowaController {
 		return "startSite";
 	}
 	
+<<<<<<< HEAD
 	@GetMapping("/kontakt")
 	public String toKontakt(Model model) {
 		EmailClient.listaKlientow.clear();
@@ -397,6 +398,12 @@ public class DomowaController {
 		email.setText("Od: " + EmailClient.listaKlientow.get(0) + " treść: " + EmailClient.listaKlientow.get(2));
 		javaMailSender.send(email);
 		return "wyslano";
+=======
+	@PostMapping("/error")
+	public String getError() {
+		System.out.println("Błąd");
+		return "error";
+>>>>>>> 9346599075cd1d983b59cf17b60cd6343d715874
 	}
 	
 	
@@ -515,6 +522,5 @@ public class DomowaController {
 		return "dlaczego";
 	}
 
-	
-	
+
 }
