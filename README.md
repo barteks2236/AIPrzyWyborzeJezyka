@@ -1,8 +1,6 @@
-
+![Logo](./src/main/resources/jarvis.jpg)
 
 # AIPrzyWyborzeJezyka
-Wsparcie AI przy wyborze języka programowania
-![Logo](./src/main/resources/jarvis.jpg)	
 
 ### Bartosz Kozak & Sara Winiarek
 
