@@ -29,8 +29,6 @@ public class ZapytaniaJarvis {
 
 /*5*/		danePytan.add(", w jakim stopniu posiadasz wiedzę z programowania w skali 1-3? gdzie 1 to słabo a 3 dobrze");
 
-///*5*/		danePytan.add(", czy byłem pomocny? Tak(1) czy nie(2)?");
-
 /*6*/ 		danePytan.add(", dziękuję za współpracę, już wiem jaki języ programowani jest dla Ciebie odpowiedni, pożegnaj się ze mną aby uzyskać odpowiedz, do zobaczenia! ");
 
 	

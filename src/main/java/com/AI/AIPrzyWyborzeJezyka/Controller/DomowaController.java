@@ -92,7 +92,6 @@ public class DomowaController {
 		dane.add(new Data(Arrays.asList(new Integer[] { 1, 2, 2, 1 }), 0));
 		dane.add(new Data(Arrays.asList(new Integer[] { 0, 0, 0, 4 }), 1));
 
-//		dane.add(new Data(Arrays.asList(new Integer[] { a, b, c, d }), czyPomoglem));
 
 		Neuron neuron = new Neuron();
 		neuron.zaladujDane(dane);
@@ -113,9 +112,6 @@ public class DomowaController {
 		
 		dane.add(new Data(Arrays.asList(new Integer[] { a, b, c, d }), czyPomoglem));
 			
-
-//		dane.add(new Data(Arrays.asList(new Integer[] { a, b, c, d }), czyPomoglem));
-
 		if (n == 2) {
 
 			if (n == 2 && (Odpowiedzi.daneOdp2.get(n).equals("1")
@@ -188,22 +184,6 @@ public class DomowaController {
 				c += 4;
 			}
 		}
-//
-//	if(n==6) {
-//		if ( n==5 && (Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("tak") || (Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("1")))) {
-//			czyPomoglem=1;
-//		}
-//		else if (n==5 && (Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("nie") || (Odpowiedzi.daneOdp2.get(n).toLowerCase().equals("2")))) {
-//			czyPomoglem=0;
-//		}
-//		
-//	}
-
-//		if (true) {
-//		dane.add(new Data(Arrays.asList(new Integer[] { a, b, c, d }), czyPomoglem));
-//		}
-
-//		dane.add(new Data(Arrays.asList(new Integer[] { 1, 10, 100, 1 }), 1));
 
 		if (n == 6) {
 			
@@ -258,7 +238,6 @@ public class DomowaController {
 				return "OdpJARVIS";
 				
 			}
-
 		}
 
 
@@ -273,12 +252,6 @@ public class DomowaController {
 		System.out.println(Odpowiedzi.daneOdp2);
 		n++;
 
-//		
-//		if (ZapytaniaJarvis.danePytan.size()==n){
-//			System.out.println("Koniec pytań");
-//			return "OdpJARVIS";
-//		}		
-//		else
 		return "JARVISchat";
 
 	}

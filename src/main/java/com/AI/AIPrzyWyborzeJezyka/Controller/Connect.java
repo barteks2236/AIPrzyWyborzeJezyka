@@ -6,7 +6,7 @@ public class Connect {
 	
 	private static String URL = "jdbc:postgresql:UsersDataAI";
 	private static String user = "postgres";
-	private static String password = "SQLdata";
+	private static String password = "Honda2236";
 	
 	public static Connection connect() {
 		Connection connection = null;
