@@ -1,6 +1,6 @@
 ![Logo](./src/main/resources/jarvis.jpg)
-
-# AIPrzyWyborzeJezyka
+#
+# AI jako doradca przy wyborze języka programowania
 
 ### Bartosz Kozak & Sara Winiarek
 
@@ -11,8 +11,8 @@
 * [Ustawienia](#Ustawienia)
 
 ## Ogólne informacje
-Ten projekt jest prostą aplikacją internetową, której celem jest zasugerowanie nauki odpowiedniego języka programowania przy pomocy sztucnej inteligencji. Do wyboru mamy dwa rodzaje AI, Pierwszym J.A.R.V.I.S. z którym komunikujemy się poprzez chat, a działa na zasadzie pracy neuronu. W jednym z pierwszych pytań JARVIS ustala zależnie od odpowiedzi czy jesteśmy któryś raz z kolei i czy jego poprzednie porady były satysfakcjonujące, jeśli nie, uczy się i zmienia wartość wag odpowiedzi w celu jak najlepszego doradzenia.
-Drugim natomiast jest V.E.R.O.N.I.C.A. która działa na zasadzie drzewa decyzyjnego. VERONICA ma dużo większą ilość języków do programowania stąd, czasem może zdarzyć się tak że JARVIS, będzie odsyłał użytkownika do Niej, w celu otrzymania dokładniejszej porady.
+Ten projekt jest prostą aplikacją internetową, której celem jest zasugerowanie nauki odpowiedniego języka programowania przy pomocy sztucznej inteligencji. Do wyboru mamy dwa rodzaje AI. Pierwszym jest J.A.R.V.I.S., z którym komunikujemy się poprzez chat. Działa na zasadzie sieci neuronowej. JARVIS zależnie od odpowiedzi uczy się i zmienia propozycję wyboru danego języka w celu jak najlepszego doradzenia.
+Drugim AI jest V.E.R.O.N.I.C.A., która działa na zasadzie drzewa decyzyjnego. Ma dużo większą liczbę języków do zaproponowania dlatego może zdarzyć się tak, że JARVIS będzie odsyłał użytkownika do niej, w celu otrzymania dokładniejszej porady.
 	
 ## Technologia
 Projekt jest stowrzony przy użyciu:
