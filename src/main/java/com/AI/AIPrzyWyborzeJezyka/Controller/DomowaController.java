@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.AI.AIPrzyWyborzeJezyka.Data.EmailClient;
 import com.AI.AIPrzyWyborzeJezyka.Data.ListaJezykow;
@@ -353,7 +352,6 @@ public class DomowaController {
 		return "startSite";
 	}
 	
-<<<<<<< HEAD
 	@GetMapping("/kontakt")
 	public String toKontakt(Model model) {
 		EmailClient.listaKlientow.clear();
@@ -361,20 +359,6 @@ public class DomowaController {
 		return "kontakt";
 	}
 
-//	@PostMapping("/kontakt") 
-//	public String getKontakt(@ModelAttribute EmailClient emailAdres, EmailClient temat, EmailClient tresc, Model model) {
-//		model.addAttribute("klient", emailAdres);
-//		model.addAttribute("klient", temat);
-//		model.addAttribute("klient", tresc);
-//		
-//		EmailClient.listaKlientow.add(emailAdres.getEmailAdres());
-//		EmailClient.listaKlientow.add(temat.getTemat());
-//		EmailClient.listaKlientow.add(temat.getTresc());
-//		System.out.println(EmailClient.listaKlientow);
-//		
-//		return "domowaAI"; 
-//	}
-	
 	@Autowired
 	public JavaMailSender javaMailSender;
 	
@@ -388,9 +372,7 @@ public class DomowaController {
 		EmailClient.listaKlientow.add(emailAdres.getEmailAdres());
 		EmailClient.listaKlientow.add(temat.getTemat());
 		EmailClient.listaKlientow.add(temat.getTresc());
-		System.out.println(EmailClient.listaKlientow);
-		
-		
+		//System.out.println(EmailClient.listaKlientow);
 		
 		SimpleMailMessage email = new SimpleMailMessage();
 		email.setTo("AIKontakt123@gmail.com");
@@ -398,16 +380,8 @@ public class DomowaController {
 		email.setText("Od: " + EmailClient.listaKlientow.get(0) + " treść: " + EmailClient.listaKlientow.get(2));
 		javaMailSender.send(email);
 		return "wyslano";
-=======
-	@PostMapping("/error")
-	public String getError() {
-		System.out.println("Błąd");
-		return "error";
->>>>>>> 9346599075cd1d983b59cf17b60cd6343d715874
 	}
-	
-	
-	
+
 
 // Nawigacja VERONICA
 	
@@ -521,6 +495,4 @@ public class DomowaController {
 	public String getDlaczego() {
 		return "dlaczego";
 	}
-
-
 }
