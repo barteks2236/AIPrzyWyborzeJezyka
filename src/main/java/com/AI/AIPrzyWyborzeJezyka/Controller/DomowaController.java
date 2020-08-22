@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.AI.AIPrzyWyborzeJezyka.Data.EmailClient;
 import com.AI.AIPrzyWyborzeJezyka.Data.ListaJezykow;
 import com.AI.AIPrzyWyborzeJezyka.Data.Odpowiedzi;
 import com.AI.AIPrzyWyborzeJezyka.Data.ZapytaniaJarvis;
@@ -346,14 +350,58 @@ public class DomowaController {
 	
 	@GetMapping("/startSite")
 	public String startSite() {
-
 		return "startSite";
-	}	
+	}
+	
+	@GetMapping("/kontakt")
+	public String toKontakt(Model model) {
+		EmailClient.listaKlientow.clear();
+		model.addAttribute("klient", new EmailClient());
+		return "kontakt";
+	}
+
+//	@PostMapping("/kontakt") 
+//	public String getKontakt(@ModelAttribute EmailClient emailAdres, EmailClient temat, EmailClient tresc, Model model) {
+//		model.addAttribute("klient", emailAdres);
+//		model.addAttribute("klient", temat);
+//		model.addAttribute("klient", tresc);
+//		
+//		EmailClient.listaKlientow.add(emailAdres.getEmailAdres());
+//		EmailClient.listaKlientow.add(temat.getTemat());
+//		EmailClient.listaKlientow.add(temat.getTresc());
+//		System.out.println(EmailClient.listaKlientow);
+//		
+//		return "domowaAI"; 
+//	}
+	
+	@Autowired
+	public JavaMailSender javaMailSender;
+	
+	@GetMapping("/wyslano")
+	public String sendEmail(@ModelAttribute EmailClient emailAdres, EmailClient temat, EmailClient tresc, Model model) {
+
+		model.addAttribute("klient", emailAdres);
+		model.addAttribute("klient", temat);
+		model.addAttribute("klient", tresc);
+		
+		EmailClient.listaKlientow.add(emailAdres.getEmailAdres());
+		EmailClient.listaKlientow.add(temat.getTemat());
+		EmailClient.listaKlientow.add(temat.getTresc());
+		System.out.println(EmailClient.listaKlientow);
+		
+		
+		
+		SimpleMailMessage email = new SimpleMailMessage();
+		email.setTo("AIKontakt123@gmail.com");
+		email.setSubject(EmailClient.listaKlientow.get(1));
+		email.setText("Od: " + EmailClient.listaKlientow.get(0) + " treść: " + EmailClient.listaKlientow.get(2));
+		javaMailSender.send(email);
+		return "wyslano";
+	}
 	
 	
 	
-	
-	
+
 // Nawigacja VERONICA
 	
 	@GetMapping("/Veronica")
